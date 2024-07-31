@@ -1,0 +1,23 @@
+services:
+  llama3-8b-cpt-sealionv2-instruct-tgi:
+    image: ghcr.io/huggingface/text-generation-inference:2.2.0
+    container_name: llama3-8b-cpt-sealionv2-instruct-tgi
+    ports:
+      - "8000:80"
+    restart: unless-stopped
+    volumes:
+      - tgi-data:/data
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: ["gpu"]
+    command: [
+      "--quantize", "bitsandbytes-nf4",
+      "--max-input-tokens", "256",
+      "--max-batch-prefill-tokens", "512",
+      "--model-id", "aisingapore/llama3-8b-cpt-sealionv2-instruct"
+    ]
+
+volumes:
+  tgi-data:
