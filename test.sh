@@ -1,7 +1,7 @@
 curl http://localhost:8000/v1/completions \
     -H "Content-Type: application/json" \
     -d '{
-        "model": "/models/llama3-8b-cpt-sealionv2-instruct",
+        "model": "/models/llama3-8b-cpt-sea-lionv2.1-instruct",
         "prompt": "Artificial Intelligence is",
         "max_tokens": 20,
         "temperature": 0.8,
