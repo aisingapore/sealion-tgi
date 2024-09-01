@@ -1,7 +1,7 @@
 # AI Singapore SEA-LION model served by Text Generation Inference (TGI) with Docker Compose
 
 ## Model
-- [LLaMA3 8B CPT SEA-LIONv2 Instruct](https://huggingface.co/aisingapore/llama3-8b-cpt-sealionv2-instruct)
+- [LLaMA3 8B CPT SEA-LIONv2.1 Instruct](https://huggingface.co/aisingapore/llama3-8b-cpt-sea-lionv2.1-instruct)
 
 ## Requirements
 - [Docker](https://docs.docker.com/engine/install/)
@@ -19,7 +19,7 @@
   curl http://localhost:8000/v1/completions \
     -H "Content-Type: application/json" \
     -d '{
-        "model": "llama3-8b-cpt-sealionv2-instruct",
+        "model": "llama3-8b-cpt-sea-lionv2.1-instruct",
         "prompt": "Artificial Intelligence is",
         "max_tokens": 20,
         "temperature": 0.8,
