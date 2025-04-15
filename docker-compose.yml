@@ -1,9 +1,9 @@
 services:
-  llama3-8b-cpt-sea-lionv2.1-instruct-tgi:
-    image: ghcr.io/huggingface/text-generation-inference:2.2.0
-    container_name: llama3-8b-cpt-sea-lionv2.1-instruct-tgi
+  Llama-SEA-LION-v3-8B-IT:
+    image: ghcr.io/huggingface/text-generation-inference:3.2.3
+    container_name: Llama-SEA-LION-v3-8B-IT
     ports:
-      - "8000:80"
+      - "8080:80"
     restart: unless-stopped
     volumes:
       - tgi-data:/data
@@ -17,7 +17,7 @@ services:
       "--quantize", "bitsandbytes-nf4",
       "--max-input-tokens", "256",
       "--max-batch-prefill-tokens", "512",
-      "--model-id", "aisingapore/llama3-8b-cpt-sea-lionv2.1-instruct"
+      "--model-id", "aisingapore/Llama-SEA-LION-v3-8B-IT"
     ]
 
 volumes:

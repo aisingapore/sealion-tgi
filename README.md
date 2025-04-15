@@ -1,7 +1,7 @@
 # AI Singapore SEA-LION model served by Text Generation Inference (TGI) with Docker Compose
 
 ## Model
-- [LLaMA3 8B CPT SEA-LIONv2.1 Instruct](https://huggingface.co/aisingapore/llama3-8b-cpt-sea-lionv2.1-instruct)
+- [Llama-SEA-LION-v3-8B-IT](https://huggingface.co/aisingapore/Llama-SEA-LION-v3-8B-IT)
 
 ## Requirements
 - [Docker](https://docs.docker.com/engine/install/)
@@ -14,14 +14,14 @@
   docker compose up
   ```
 - [TGI](https://huggingface.co/docs/text-generation-inference/) is deployed as a server that implements the OpenAI API protocol.
-  By default, it starts the server at http://localhost:8000. This server can be queried in the same format as OpenAI API. For example:
+  The server can be queried via http://localhost:8080 in the same format as the OpenAI API. For example:
   ```bash
-  curl http://localhost:8000/v1/completions \
+  curl http://localhost:8080/v1/completions \
     -H "Content-Type: application/json" \
     -d '{
-        "model": "llama3-8b-cpt-sea-lionv2.1-instruct",
+        "model": "Llama-SEA-LION-v3-8B-IT",
         "prompt": "Artificial Intelligence is",
-        "max_tokens": 20,
+        "max_tokens": 50,
         "temperature": 0.8,
         "repetition_penalty": 1.2
     }'
